@@ -43,9 +43,9 @@ isWood(items);
 //find which items are made from eight or more materials
 const eightOrMore = arr => {
     // get items made from 8 or more materials
-    let items = arr.filter(e => e.materials.length >= 8);
+    let items = _.filter(arr, (arr) => {return arr.materials.length >= 8});
     // print title and material list
-    const matList = items.map(e => `${e.title} ${e.materials}`);
+    const matList = _.map(items, e => {return `${e.title} ${e.materials}`});
     const result = matList.join('\n');
     console.log(result);
     return result;
@@ -55,7 +55,7 @@ eightOrMore(items);
 // get how many items were made by the sellers
 const madeBySeller = arr => {
     //filter array for who_made === 'i_did'
-    const madeBySeller = arr.filter(e => e.who_made === 'i_did');
+    const madeBySeller = _.filter(arr, e => {return e.who_made === 'i_did'});
     console.log(madeBySeller);
     // return amount of madeBySeller
     const numItems = madeBySeller.length;
