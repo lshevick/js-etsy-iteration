@@ -34,7 +34,7 @@ findGBP(items);
 //find which items are made out of wood
 const isWood = arr => {
     // filter items by materials including wood
-    const results = arr.filter(e => e.materials.includes('wood'));
+    const results = _.filter(arr, e => {return e.materials.includes('wood')});
     console.log(results);
     return results;
 }
