@@ -25,7 +25,7 @@ inBetweenCost(items, 14, 18);
 // find the items with a 'GBP' currency code and print its name and price
 const findGBP = arr => {
     // check each item's currency_code for GBP
-    const brit = arr.find((e) => e.currency_code === 'GBP');
+    const brit = _.find(arr, ['currency_code', 'GBP']);
     console.log(`${brit.title} costs £${brit.price}`);
     return `${brit.title} costs £${brit.price}`;
 }
@@ -34,7 +34,7 @@ findGBP(items);
 //find which items are made out of wood
 const isWood = arr => {
     // filter items by materials including wood
-    const results = _.find(arr, ['materials', 'wood']);
+    const results = arr.filter(e => e.materials.includes('wood'));
     console.log(results);
     return results;
 }
