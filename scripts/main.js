@@ -15,7 +15,7 @@ averageCost(items);
 const inBetweenCost = (arr, low$, high$) => {
     //check what prices are less than and above given values and pass into result array
     const results =
-    items.filter(e => e.price > low$ && e.price < high$);
+    items.filter(e => _.inRange(e.price, low$, high$));
     console.log(results);
     return results;
 }
