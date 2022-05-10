@@ -34,10 +34,22 @@ findGBP(items);
 //find which items are made out of wood
 const isWood = arr => {
     // filter items by materials including wood
-    let mats = arr.materials;
     const results = arr.filter(e => e.materials.includes('wood'));
     console.log(results);
     return results;
 }
 isWood(items);
+
+//find which items are made from eight or more materials
+const eightOrMore = arr => {
+    // get items made from 8 or more materials
+    let items = arr.filter(e => e.materials.length >= 8);
+    console.log(items);
+    // print title and material list
+    const matList = items.map(e => `${e.title} ${e.materials}`);
+    const result = matList.join('\n');
+    console.log(result);
+    return result;
+}
+eightOrMore(items);
 
