@@ -31,3 +31,13 @@ const findGBP = arr => {
 }
 findGBP(items);
 
+//find which items are made out of wood
+const isWood = arr => {
+    // filter items by materials including wood
+    let mats = arr.materials;
+    const results = arr.filter(e => e.materials.includes('wood'));
+    console.log(results);
+    return results;
+}
+isWood(items);
+
